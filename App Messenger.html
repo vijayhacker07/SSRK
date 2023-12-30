@@ -1,0 +1,2029 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="csrf-token" content="Cr3Nu7XiWpt7B9VmQrhmc8Iw5onBzZpnzrjqTqW2">
+    <title>Accounts | Dashboard | AppMessenger</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/logo/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/logo/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/logo/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/logo/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/logo/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/logo/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/logo/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/logo/apple-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" href="/logo/apple-icon-180x180.png">
+    <link rel='stylesheet' href='https://appmsr.com/_css/dashboard/components-v2.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='https://appmsr.com/css/dashboard/mystyler.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='https://appmsr.com/css/index/color/root-lk.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='https://appmsr.com/_css/dashboard/select.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="https://appmsr.com/_css/nprogress.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://appmsr.com/_css/intro/introjs.min.css" type="text/css" media="all">
+    <link rel='stylesheet'  href='https://appmsr.com/_css/lk/updates.css' type='text/css' media='all' /> 
+
+
+    
+    <link rel='stylesheet'  href='https://appmsr.com/_css/mode/newyear.css' type='text/css' media='all' />
+    <link rel="canonical" href="https://appmsr.com/dashboard/account">
+            <link rel="alternate" hreflang="en" href="https://appmsr.com/dashboard/account">
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123512660-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-123512660-1');
+</script>    <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+
+    <script src="https://appmsr.com/_js/index/jquery-3.5.1.min.js"></script>
+    
+
+</head>
+<body class="antialiased bg-gray-100 dark:bg-dark" data-theme="light"
+>
+<div class="bg-gray-100 project-bg">
+    <header><div class="bg-project-bg"><span></span><span></span><span></span><span></span><span></span></div></header>
+    <section class="snow-head" style="height: 100%;color: #FFF;display: block;pointer-events: none;position: absolute;top: 0;left:0;right:0">
+    </section>
+    <script>
+        if (window.screen.width > 1024) {
+            (function () {
+
+                var COUNT = 40;
+                var masthead = document.querySelector('.snow-head');
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                var width = masthead.clientWidth;
+                var height = masthead.clientHeight;
+                var i = 0;
+                var active = false;
+
+                function onResize() {
+                    width = masthead.clientWidth;
+                    height = masthead.clientHeight;
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.fillStyle = '#FFF';
+
+                    var wasActive = active;
+                    active = width > 600;
+
+                    if (!wasActive && active)
+                        requestAnimFrame(update);
+                }
+
+                var Snowflake = function () {
+                    this.x = 0;
+                    this.y = 0;
+                    this.vy = 0;
+                    this.vx = 0;
+                    this.r = 0;
+
+                    this.reset();
+                }
+
+                Snowflake.prototype.reset = function() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * -height;
+                    this.vy = 1 + Math.random() * 0.2;
+                    this.vx = 0.5 - Math.random();
+                    this.r = 1 + Math.random() * 2;
+                    this.o = 0.5 + Math.random() * 0.5;
+                }
+
+                canvas.style.position = 'absolute';
+                canvas.style.left = canvas.style.top = '0';
+
+                var snowflakes = [], snowflake;
+                for (i = 0; i < COUNT; i++) {
+                    snowflake = new Snowflake();
+                    snowflake.reset();
+                    snowflakes.push(snowflake);
+                }
+
+                function update() {
+
+                    ctx.clearRect(0, 0, width, height);
+
+                    if (!active)
+                        return;
+
+                    for (i = 0; i < COUNT; i++) {
+                        snowflake = snowflakes[i];
+                        snowflake.y += snowflake.vy;
+                        snowflake.x += snowflake.vx;
+
+                        ctx.globalAlpha = snowflake.o;
+                        ctx.beginPath();
+                        ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
+                        ctx.closePath();
+                        ctx.fill();
+
+                        if (snowflake.y > height) {
+                            snowflake.reset();
+                        }
+                    }
+
+                    requestAnimFrame(update);
+                }
+
+                window.requestAnimFrame = (function(){
+                    return  window.requestAnimationFrame       ||
+                        window.webkitRequestAnimationFrame ||
+                        window.mozRequestAnimationFrame    ||
+                        function( callback ){
+                            window.setTimeout(callback, 1000 / 60);
+                        };
+                })();
+
+                onResize();
+                window.addEventListener('resize', onResize, false);
+
+                masthead.appendChild(canvas);
+            })();
+        }
+
+    </script>
+ 
+
+    
+    <div class="" x-data="{ sidebarOpen: false }"  @keydown.window.escape="sidebarOpen = false">
+        <div class="fixed mx-auto w-full z-20"> <nav class="bg-gray-950 dark:bg-dark-50 relative z-10">
+    <div class="mx-auto px-4 sm:px-0 lg:px-8 max-w-5x7">
+        <div class="flex items-center justify-between sm:h-11 h-12 px-0 sm:px-4 lg:px-4">
+
+            <div class="flex flex-shrink-0">
+            
+                                    <div class="flex items-center">
+
+    <div class="flex-shrink-0 flex items-center">
+        <svg class="h-8 icon-logo-santa" version="1.0" xmlns="http://www.w3.org/2000/svg" width="160px" viewBox="0 0 530.000000 105.000000" preserveAspectRatio="xMidYMid meet">
+
+            <use xlink:href="#icon-logo-santa"></use></svg><img class="h-6 w-12" src="/logo/appmsr.png" alt="Workflow">
+        <svg class="mr_l-2 max-w115" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 90">
+            <text y="60" font-size="32" font-weight="bold" font-family="Avenir, Helvetica, sans-serif" fill="#fff">
+                AppMessenger
+            </text>
+        </svg></div>
+    <style>
+        .icon-logo-santa {
+            position: absolute;
+            margin-top: -15px;
+        }
+    </style>                        <div class="icon-logo-santa">
+        <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol viewBox="10 0 74 20" fill="none" id="icon-logo-santa" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.735.7c-.476-.045-.922.03-1.353.148-1.22.64-2.246 1.65-2.99 3.094C1.44 5.756 1.01 7.57.935 9.608c0 1.16.268 6.202.803 5.83 1.22-.878 1.16-2.766 1.309-3.644.223-1.309.58-4.224 1.68-5.027-.297.655 0 1.235.803 1.026-.074.655.223 1.235.73 1.532L8.296 8.3a22.931 22.931 0 014.149-2.067c-.208-.759-.476-1.502-.952-2.142C10.29 2.47 8.892.848 6.735.7z" fill="#D33939"></path>
+                <path d="M15.926 2.692C14.692 1.532 13.16.655 11.494.298c-2.23-.52-4.357-.372-6.097.55A4.074 4.074 0 016.75.7c2.157.15 3.54 1.77 4.76 3.391.46.64.743 1.383.951 2.142a35.94 35.94 0 012.038-.7c.357-.148 2.915-.58 3.063-.877.194-.58-1.264-1.591-1.636-1.963z" fill="#AF3C3C"></path>
+                <path d="M15.674 5.98c-.194-.774-.491-1.696-1.22-2.187l-.015-.015c-2.603.268-5.205 1.353-7.094 2.99-1.457 1.234-2.692 2.617-1.814 4.446.312.714.743 1.145 1.234 1.383 1.1.536.729-.654 1.933-1.576 1.146-.878 3.02-1.606 4.09-2.201.357-.194 2.722-.848 3.079-1.012.09-1.115.044-.788-.193-1.829z" fill="#fff"></path>
+                <path d="M18.692 6.336c-.238-1.695-.951-2.543-2.766-2.618-.49-.014-.996.015-1.487.06l.015.015c.729.49 1.026 1.413 1.22 2.186.133.58.178 1.25.118 1.948 0 0 3.005-.892 2.9-1.591z" fill="#C0DFED"></path>
+                <path d="M6.587 3.555a7.282 7.282 0 01-.387.55l-.342.58-.625 1.19-.134-.178.432-.164.416-.208.402-.238.401-.253.788-.535.402-.268c.134-.09.283-.164.416-.253h.015a.142.142 0 01.179.045c.03.044.03.089 0 .119l-.09.178a.614.614 0 01-.104.164c-.044.044-.074.104-.119.148-.044.045-.074.105-.119.15-.163.178-.357.341-.535.505a8.347 8.347 0 00-.52.505c-.045.045-.075.09-.12.134-.044.045-.074.104-.104.149s-.06.104-.089.149c-.03.06-.044.104-.074.163l.044-.178c.03-.06.045-.12.075-.179.03-.06.06-.104.089-.163.03-.045.06-.104.104-.149.149-.193.312-.387.476-.565l.49-.535c.045-.045.075-.09.105-.134.03-.045.06-.09.104-.149.03-.045.06-.104.09-.149.029-.044.044-.104.059-.148L8.505 4c-.134.09-.268.164-.401.253l-.387.268c-.253.178-.52.371-.788.55l-.402.253-.431.238-.446.208c-.164.06-.313.104-.476.149-.06.015-.134-.015-.149-.075-.015-.03 0-.074.015-.104l.342-.58.357-.565.193-.283c.075-.089.134-.178.208-.267.15-.149.298-.327.447-.491zM6.706 6.693s.044-.06.104-.149c.03-.045.074-.104.134-.163.03-.03.044-.06.074-.105l.104-.104c.074-.074.149-.148.238-.223.09-.074.178-.149.283-.223.104-.074.193-.149.312-.223.104-.074.223-.149.327-.208.119-.06.223-.134.342-.194.104-.059.223-.118.327-.178.104-.06.209-.104.313-.164.104-.06.193-.104.282-.148.179-.09.327-.164.431-.209.105-.044.164-.074.164-.074s-.044.045-.134.12c-.089.073-.208.192-.372.297-.163.119-.342.252-.55.386-.104.06-.208.134-.312.208-.104.06-.223.134-.327.209-.104.074-.223.134-.328.193a1 1 0 00-.163.104.534.534 0 00-.149.104c-.104.06-.208.12-.297.179-.09.06-.179.119-.253.178-.075.06-.149.104-.223.149-.06.044-.12.09-.164.119a9.736 9.736 0 00-.163.119z" fill="#7A2C2C"></path>
+                <path d="M7.702 12.315s.015-.045.06-.12c.03-.074.089-.178.163-.312.075-.134.179-.282.313-.46a6.09 6.09 0 011.145-1.086 6.81 6.81 0 01.803-.521c.282-.164.58-.327.892-.476.313-.149.64-.283.967-.416a30.347 30.347 0 011.948-.67c.625-.193 1.22-.342 1.725-.476 1.012-.252 1.696-.43 1.696-.43s-.045.014-.12.044c-.073.03-.192.074-.326.134-.283.104-.7.252-1.19.416-.49.164-1.071.357-1.696.55-.312.104-.624.209-.951.328-.328.119-.64.237-.967.356-.327.134-.64.253-.952.402-.312.149-.61.283-.892.446-.283.149-.55.313-.803.476-.12.09-.238.164-.357.253-.06.045-.104.09-.164.119a1.04 1.04 0 01-.149.119 8.662 8.662 0 00-.52.476 2.495 2.495 0 00-.342.416 3.94 3.94 0 00-.208.298c-.045.089-.075.134-.075.134z" fill="#99BAC6"></path>
+                <path d="M3.463 14.694a1.842 1.842 0 00-.907-.43c1.279.98.595 3.732-1.353 3.97 1.1.476 2.26.045 2.751-1.1.357-.804.179-1.86-.49-2.44z" fill="#C0DFED"></path>
+                <path d="M2.556 14.263a2.733 2.733 0 00-.49-.045c-.655 0-1.324.268-1.696.789-.684.951-.387 2.572.624 3.123.075.03.134.074.209.104 1.948-.253 2.632-2.99 1.353-3.971z" fill="#fff"></path>
+            </symbol>
+        </svg>
+    </div>
+    <a href="/" class="flex-shrink-0 flex items-center  newyear"></a>
+
+
+</div>                    <a class="-ml-3 logo-newyear" href="https://appmsr.com"></a>
+                
+
+
+            </div>
+            <div class="flex items-center">   <div class="hidden lg:block">
+                    <div class="ml-28 flex items-baseline space-x-4">
+
+
+                        <div class="text-gray-300 cursor-pointer hover:text-white px-3 py-2 rounded-md text-sm font-medium lg:flex"><span class="hidden xl:block">Today:</span> 17 February 2023</div>
+                        <a href="https://appmsr.com/dashboard/faq" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                        <a href="https://appmsr.com/dashboard/reviews" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reviews</a>
+                        <a href="https://appmsr.com/dashboard/support" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">24/7 Support</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 lg:flex sm:items-center">
+
+
+
+
+
+   <div @click.away="open = false" class="ml-4 relative" x-data="{ open: false }">
+         <div>
+
+             <button @click="open = !open" class="p-1 mr-1 mt-1 text-gray-400    colorize" >
+                 <span class="flex inline-flex items-center justify-center"><img src="/flags/en.svg" class="h-4 w-4 mr-1 items-center rounded-full shadow" alt="en">                     <span class="text-gray-400 dark:text-gray-400 px-1 uppercase text-sm font-medium">en</span>
+
+                  </span>
+             </button>
+         </div>
+         <div x-show="open" x-description="Profile dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-200" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-dark-100 items-center ring-1 ring-black ring-opacity-5 z-10" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" style="display: none;">
+
+                      </div>
+     </div>
+
+    <button class="p-1 rounded-full text-gray-400 hover:text-gray-500">
+        <label for="ThemeCheckbox" class="header__userLink_theme header__userLink" id="ThemeCheckboxName"></label>
+    </button>
+
+    <div @click.away="open = false" class="mt-1 relative"  x-data="{ open: false }">
+        <button @click="open = !open"   aria-haspopup="true" x-bind:aria-expanded="open" class="ml-2 p-1 rounded-full text-gray-400 hover:text-gray-500 ">
+            <span class="sr-only">View notifications</span>
+                            <span class="absolute uppercase font-normal inline-flex text-center p-0 leading-none text-xs h-3 w-3 inline-flex items-center justify-center rounded-full bg-red-400 text-white">1</span>
+            
+
+
+            <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+            </svg>
+
+        </button>
+        <div style="display: none" x-show="open" x-description="Profile dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"
+     class="divide-y divide-gray-100 origin-top-right absolute right-0 mt-2 lg:min-w-44 min-w-19 rounded-md shadow-lg py-1 dark:bg-dark-100 ring-1 ring-black ring-opacity-5 z-10" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+   <div class="flex items-start bg-white dark:bg-dark-100">
+<div class="flex-1 divide-y divide-gray-200 dark:divide-gray-400">
+    
+    <div class="notifications_activate max-w-3xl w-full pr-10  pointer-events-auto flex divide-x divide-gray-200">
+        <div class="w-0 flex-1 flex items-center p-4">
+            <div class="w-full">
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-500 introjs-showElement ">
+                    There are <span class="text-sm font-medium text-gray-900 dark:text-white">5
+
+</span> active sessions available to you. Select one or more accounts to <a href="https://appmsr.com/dashboard/account">activate</a>.
+                </p>
+
+            </div> </div>
+    </div>
+   
+
+
+
+</div>
+       <div class="ml-4 flex-shrink-0 flex p-2 absolute right-2">
+           <button @click="open = !open" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500">
+               <span class="sr-only">Close</span>
+               <svg class="h-5 w-5" x-description="Heroicon name: solid/x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                   <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+               </svg>
+           </button>
+       </div>
+   </div>
+</div>
+
+    </div>
+    <!-- Profile dropdown -->
+    <div @click.away="open = false" class="ml-4 relative" x-data="{ open: false }">
+        <div>
+            <button @click="open = !open" class="mr-2 flex text-sm rounded-full text-gray-400 hover:text-gray-500" id="user-menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                <span class="sr-only">Open user menu</span>
+                <svg class="h-5 w-5" version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 -25 512 582" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M437.02,330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521,243.251,404,198.548,404,148
+			C404,66.393,337.607,0,256,0S108,66.393,108,148c0,50.548,25.479,95.251,64.262,121.962
+			c-36.21,12.495-69.398,33.136-97.281,61.018C26.629,379.333,0,443.62,0,512h40c0-119.103,96.897-216,216-216s216,96.897,216,216
+			h40C512,443.62,485.371,379.333,437.02,330.98z M256,256c-59.551,0-108-48.448-108-108S196.449,40,256,40
+			c59.551,0,108,48.448,108,108S315.551,256,256,256z"/>
+    </g>
+</g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+</svg>
+            </button>
+        </div>
+        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-dark-100 ring-1 ring-black ring-opacity-5 z-10" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" style="display: none;">
+
+            <a href="https://appmsr.com/dashboard/profile" class="block px-4 dark:text-white py-2 text-ns dark:hover:bg-dark-100 text-gray-700 " role="menuitem">Profile</a>
+
+            <a href="https://appmsr.com/dashboard/reviews" class="block px-4 dark:text-white py-2 text-ns dark:hover:bg-dark-100 text-gray-700 " role="menuitem">Add a review</a>
+
+            <a href="https://appmsr.com/logout" class="block px-4 py-2 text-ns dark:hover:bg-dark-100 dark:text-white text-gray-700 " role="menuitem">Log out</a>
+
+        </div>
+    </div>
+</div>
+<div class="-mr-2 flex items-center lg:hidden">
+    <div @click.away="open = false" class="relative whitespace-nowrap" x-data="{ open: false }">
+        <div>
+
+            <button @click="open = !open" class="pt-1 pb-1 px-2 rounded-full text-gray-400 hover:text-gray-500 dark:text-gray-500  hasDropdown  colorize" data-dropdown="flags" aria-haspopup="true" x-bind:aria-expanded="open" aria-expanded="true">
+                <span class="flex inline-flex items-center justify-center"><img src="/flags/en.svg" class="h-4 w-4 mr-1 items-center rounded-full" alt="en"> </span><span class="text-gray-400 dark:text-gray-400 px-1 align-top uppercase text-sm font-medium">en</span>   </button>
+        </div>
+            </div>
+    <button class=" inline-flex items-center mb-0 px-1  rounded-md text-gray-400 hover:text-gray-500  ">
+        <label for="ThemeCheckbox" class="header__userLink_theme header__userLink" id="ThemeCheckboxName"></label>
+
+    </button>
+    <div @click.away="open = false" class="relative"  x-data="{ open: false }">
+        <button @click="open = !open" class=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500  " x-bind:aria-expanded="open">
+                            <span class="absolute uppercase font-normal inline-flex text-center p-0 leading-none text-xs h-3 w-3 inline-flex items-center justify-center rounded-full bg-red-400 text-white mb-1 ml-2">1</span>
+                        <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+            </svg>
+        </button>
+        <div style="display: none" x-show="open" x-description="Profile dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"
+     class="divide-y divide-gray-100 origin-top-right absolute right-0 mt-2 lg:min-w-44 min-w-19 rounded-md shadow-lg py-1 dark:bg-dark-100 ring-1 ring-black ring-opacity-5 z-10" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+   <div class="flex items-start bg-white dark:bg-dark-100">
+<div class="flex-1 divide-y divide-gray-200 dark:divide-gray-400">
+    
+    <div class="notifications_activate max-w-3xl w-full pr-10  pointer-events-auto flex divide-x divide-gray-200">
+        <div class="w-0 flex-1 flex items-center p-4">
+            <div class="w-full">
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-500 introjs-showElement ">
+                    There are <span class="text-sm font-medium text-gray-900 dark:text-white">5
+
+</span> active sessions available to you. Select one or more accounts to <a href="https://appmsr.com/dashboard/account">activate</a>.
+                </p>
+
+            </div> </div>
+    </div>
+   
+
+
+
+</div>
+       <div class="ml-4 flex-shrink-0 flex p-2 absolute right-2">
+           <button @click="open = !open" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500">
+               <span class="sr-only">Close</span>
+               <svg class="h-5 w-5" x-description="Heroicon name: solid/x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                   <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+               </svg>
+           </button>
+       </div>
+   </div>
+</div>
+    </div>
+    <!-- Mobile menu button -->
+    <button @click="sidebarOpen = open"  class="px-2 text-gray-400 lg:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="h-6 w-6" x-description="Heroicon name: outline/menu-alt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+        </svg>
+    </button>
+</div>
+
+        </div>
+    </div>
+
+</nav>
+</div>
+        <div class="content_section max-w-5x7 mx-auto px-0 sm:px-0 lg:px-8 flex overflow-hidden z-2 relative">
+            <div x-show="sidebarOpen" class="lg:hidden" style="display: none">
+    <div class="fixed inset-0 flex z-40">
+        <div @click="sidebarOpen = false" x-show="sidebarOpen" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0">
+            <div class="absolute inset-0 bg-gray-600 opacity-75" aria-hidden="true"></div>
+        </div>
+        <div x-show="sidebarOpen" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="relative flex-1 flex flex-col max-w-xs w-full bg-white">
+            <div class="absolute top-0 right-0 -mr-12 pt-2">
+                <button x-show="sidebarOpen" @click="sidebarOpen = false" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span class="sr-only">Close sidebar</span>
+                    <svg class="h-6 w-6 text-white" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Sidebar component, swap this element with another sidebar if you like -->
+<div class="flex flex-col flex-grow project-bg-menu  pt-2 pb-4 sm:mr-4     overflow-y-auto">
+    <div class="flex items-center flex-shrink-0 px-0 lg:px-1 logo-lk">
+        <div class="icon-logo-santa"></div>
+    <div class="flex items-center">
+
+    <div class="flex-shrink-0 flex items-center">
+        <svg class="h-8 icon-logo-santa" version="1.0" xmlns="http://www.w3.org/2000/svg" width="160px" viewBox="0 0 530.000000 105.000000" preserveAspectRatio="xMidYMid meet">
+
+            <use xlink:href="#icon-logo-santa"></use></svg><img class="h-6 w-12" src="/logo/appmsr.png" alt="Workflow">
+        <svg class="mr_l-2 max-w115" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 90">
+            <text y="60" font-size="32" font-weight="bold" font-family="Avenir, Helvetica, sans-serif" fill="#fff">
+                AppMessenger
+            </text>
+        </svg></div>
+    <style>
+        .icon-logo-santa {
+            position: absolute;
+            margin-top: -15px;
+        }
+    </style>                        <div class="icon-logo-santa">
+        <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol viewBox="10 0 74 20" fill="none" id="icon-logo-santa" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.735.7c-.476-.045-.922.03-1.353.148-1.22.64-2.246 1.65-2.99 3.094C1.44 5.756 1.01 7.57.935 9.608c0 1.16.268 6.202.803 5.83 1.22-.878 1.16-2.766 1.309-3.644.223-1.309.58-4.224 1.68-5.027-.297.655 0 1.235.803 1.026-.074.655.223 1.235.73 1.532L8.296 8.3a22.931 22.931 0 014.149-2.067c-.208-.759-.476-1.502-.952-2.142C10.29 2.47 8.892.848 6.735.7z" fill="#D33939"></path>
+                <path d="M15.926 2.692C14.692 1.532 13.16.655 11.494.298c-2.23-.52-4.357-.372-6.097.55A4.074 4.074 0 016.75.7c2.157.15 3.54 1.77 4.76 3.391.46.64.743 1.383.951 2.142a35.94 35.94 0 012.038-.7c.357-.148 2.915-.58 3.063-.877.194-.58-1.264-1.591-1.636-1.963z" fill="#AF3C3C"></path>
+                <path d="M15.674 5.98c-.194-.774-.491-1.696-1.22-2.187l-.015-.015c-2.603.268-5.205 1.353-7.094 2.99-1.457 1.234-2.692 2.617-1.814 4.446.312.714.743 1.145 1.234 1.383 1.1.536.729-.654 1.933-1.576 1.146-.878 3.02-1.606 4.09-2.201.357-.194 2.722-.848 3.079-1.012.09-1.115.044-.788-.193-1.829z" fill="#fff"></path>
+                <path d="M18.692 6.336c-.238-1.695-.951-2.543-2.766-2.618-.49-.014-.996.015-1.487.06l.015.015c.729.49 1.026 1.413 1.22 2.186.133.58.178 1.25.118 1.948 0 0 3.005-.892 2.9-1.591z" fill="#C0DFED"></path>
+                <path d="M6.587 3.555a7.282 7.282 0 01-.387.55l-.342.58-.625 1.19-.134-.178.432-.164.416-.208.402-.238.401-.253.788-.535.402-.268c.134-.09.283-.164.416-.253h.015a.142.142 0 01.179.045c.03.044.03.089 0 .119l-.09.178a.614.614 0 01-.104.164c-.044.044-.074.104-.119.148-.044.045-.074.105-.119.15-.163.178-.357.341-.535.505a8.347 8.347 0 00-.52.505c-.045.045-.075.09-.12.134-.044.045-.074.104-.104.149s-.06.104-.089.149c-.03.06-.044.104-.074.163l.044-.178c.03-.06.045-.12.075-.179.03-.06.06-.104.089-.163.03-.045.06-.104.104-.149.149-.193.312-.387.476-.565l.49-.535c.045-.045.075-.09.105-.134.03-.045.06-.09.104-.149.03-.045.06-.104.09-.149.029-.044.044-.104.059-.148L8.505 4c-.134.09-.268.164-.401.253l-.387.268c-.253.178-.52.371-.788.55l-.402.253-.431.238-.446.208c-.164.06-.313.104-.476.149-.06.015-.134-.015-.149-.075-.015-.03 0-.074.015-.104l.342-.58.357-.565.193-.283c.075-.089.134-.178.208-.267.15-.149.298-.327.447-.491zM6.706 6.693s.044-.06.104-.149c.03-.045.074-.104.134-.163.03-.03.044-.06.074-.105l.104-.104c.074-.074.149-.148.238-.223.09-.074.178-.149.283-.223.104-.074.193-.149.312-.223.104-.074.223-.149.327-.208.119-.06.223-.134.342-.194.104-.059.223-.118.327-.178.104-.06.209-.104.313-.164.104-.06.193-.104.282-.148.179-.09.327-.164.431-.209.105-.044.164-.074.164-.074s-.044.045-.134.12c-.089.073-.208.192-.372.297-.163.119-.342.252-.55.386-.104.06-.208.134-.312.208-.104.06-.223.134-.327.209-.104.074-.223.134-.328.193a1 1 0 00-.163.104.534.534 0 00-.149.104c-.104.06-.208.12-.297.179-.09.06-.179.119-.253.178-.075.06-.149.104-.223.149-.06.044-.12.09-.164.119a9.736 9.736 0 00-.163.119z" fill="#7A2C2C"></path>
+                <path d="M7.702 12.315s.015-.045.06-.12c.03-.074.089-.178.163-.312.075-.134.179-.282.313-.46a6.09 6.09 0 011.145-1.086 6.81 6.81 0 01.803-.521c.282-.164.58-.327.892-.476.313-.149.64-.283.967-.416a30.347 30.347 0 011.948-.67c.625-.193 1.22-.342 1.725-.476 1.012-.252 1.696-.43 1.696-.43s-.045.014-.12.044c-.073.03-.192.074-.326.134-.283.104-.7.252-1.19.416-.49.164-1.071.357-1.696.55-.312.104-.624.209-.951.328-.328.119-.64.237-.967.356-.327.134-.64.253-.952.402-.312.149-.61.283-.892.446-.283.149-.55.313-.803.476-.12.09-.238.164-.357.253-.06.045-.104.09-.164.119a1.04 1.04 0 01-.149.119 8.662 8.662 0 00-.52.476 2.495 2.495 0 00-.342.416 3.94 3.94 0 00-.208.298c-.045.089-.075.134-.075.134z" fill="#99BAC6"></path>
+                <path d="M3.463 14.694a1.842 1.842 0 00-.907-.43c1.279.98.595 3.732-1.353 3.97 1.1.476 2.26.045 2.751-1.1.357-.804.179-1.86-.49-2.44z" fill="#C0DFED"></path>
+                <path d="M2.556 14.263a2.733 2.733 0 00-.49-.045c-.655 0-1.324.268-1.696.789-.684.951-.387 2.572.624 3.123.075.03.134.074.209.104 1.948-.253 2.632-2.99 1.353-3.971z" fill="#fff"></path>
+            </symbol>
+        </svg>
+    </div>
+    <a href="/" class="flex-shrink-0 flex items-center  newyear"></a>
+
+
+</div>    <a class="logo-newyear" href="https://appmsr.com"></a>
+
+
+    </div>
+    <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="px-3 mt-6 relative inline-block text-left menu_dropdown">
+        <div x-description="Dropdown menu toggle, controlling the show/hide state of dropdown menu.">
+            <button @click="open = !open" type="button" class="group w-full rounded py-2 text-ns font-medium text-gray-700" id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                <span class="flex w-full justify-between items-center">
+                  <span class="flex min-w-0 items-center justify-between space-x-3">
+                   <span class="inline-block relative">  <img class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0 shadow" src="/images/user-default.png" alt="user">
+                       <!-- todo: включить иконки соц сетей -->
+                       <span class="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white bg-green-400"></span></span>
+                    <span class="flex-1 min-w-0">
+                      <span class="text-gray-900 dark:text-white text-ns font-medium truncate">bitit</span>
+                      <span class="text-gray-500 dark:text-gray-500 text-ns truncate">ID:0j7bmqpX</span>
+                    </span>
+                  </span>
+                  <svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: solid/selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+</svg>
+                </span>
+            </button>
+        </div>
+        <div x-show="open" x-description="Dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="z-10 mx-3 origin-top absolute right-0 left-0 mt-1 rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 bg-white               dark:bg-dark" role="menu" aria-orientation="vertical" aria-labelledby="options-menu" style="display: none;">
+            <div class=" ">
+                <a href="https://appmsr.com/dashboard/profile" class="block px-4  py-2 text-ns text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-dark-50" role="menuitem">Profile Settings</a>
+            </div>
+            <div class=" ">
+                <a href="https://appmsr.com/dashboard/support" class="block px-4 border-t border-b border-gray-200 dark:border-dark-200  py-2 text-ns text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-dark-50" role="menuitem">Support Center</a>
+            </div>
+            <div class=" ">
+                <a href="https://appmsr.com/logout" class="block px-4 py-2  text-ns text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-dark-50" role="menuitem">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 flex-grow flex flex-col">
+        <nav id="left-menu" class="flex-1 ">
+            <ul>
+                <li class=""><a href="https://appmsr.com/dashboard/home" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+                        Dashboard
+                    </a></li>
+                <li class="active_menu"><a href="https://appmsr.com/dashboard/account" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Available Accounts
+                        <span class="bg-gray-200 dark:bg-dark-100 dark:hover:bg-dark-50  ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full">
+                    5
+                </span>
+                    </a></li>
+                <div class="hline mt-1"></div>
+                <li class=""><a href="https://appmsr.com/dashboard/whatsapp" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        WhatsApp
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/viber" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Viber
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/messenger" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Messenger
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/telegram" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Telegram
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/snapchat" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Snapchat
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/wechat" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        WeChat
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/skype" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Skype
+                    </a></li>
+                <div class="hline mt-1"></div>
+                  <li class=""><a href="https://appmsr.com/dashboard/location" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                             Current Location
+                         </a></li>
+                     <li class=""><a href="https://appmsr.com/dashboard/movement" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+                             Movement History
+                         </a></li>
+                <div class="hline mt-1"></div>
+                <li class=""><a href="https://appmsr.com/dashboard/balance" class="text-gray-600 truncate rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Wallet Balance
+                        <span class="bg-gray-200 dark:bg-dark-100  rounded  ml-auto inline-block py-0.5 px-2 text-xs font-medium rounded-full">
+               <span class="dollar"> $ </span> 0 USD
+                </span>
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/history" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Payment History
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/actions" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Sales and Promotions
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/affiliate" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Affiliate Program
+                    </a></li>
+                <div class="hline mt-1"></div>
+                <li class=""><a href="https://appmsr.com/dashboard/reviews" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+
+
+                        Reviews Section
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/faq" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        FAQ Section
+                    </a></li>
+
+                <li class=""><a href="https://appmsr.com/dashboard/support" class="text-gray-600 roundeds dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Support Center
+                                            </a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+        </div>
+        <div class="flex-shrink-0 w-14" aria-hidden="true">
+
+        </div>
+    </div>
+</div>
+<div class="hidden lg:flex lg:flex-shrink-0">
+    <div class="flex flex-col w-64 pt-1">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+<div class="flex flex-col flex-grow project-bg-menu  pt-2 pb-4 sm:mr-4     overflow-y-auto">
+    <div class="flex items-center flex-shrink-0 px-0 lg:px-1 logo-lk">
+        <div class="icon-logo-santa"></div>
+    <div class="flex items-center">
+
+    <div class="flex-shrink-0 flex items-center">
+        <svg class="h-8 icon-logo-santa" version="1.0" xmlns="http://www.w3.org/2000/svg" width="160px" viewBox="0 0 530.000000 105.000000" preserveAspectRatio="xMidYMid meet">
+
+            <use xlink:href="#icon-logo-santa"></use></svg><img class="h-6 w-12" src="/logo/appmsr.png" alt="Workflow">
+        <svg class="mr_l-2 max-w115" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 90">
+            <text y="60" font-size="32" font-weight="bold" font-family="Avenir, Helvetica, sans-serif" fill="#fff">
+                AppMessenger
+            </text>
+        </svg></div>
+    <style>
+        .icon-logo-santa {
+            position: absolute;
+            margin-top: -15px;
+        }
+    </style>                        <div class="icon-logo-santa">
+        <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol viewBox="10 0 74 20" fill="none" id="icon-logo-santa" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.735.7c-.476-.045-.922.03-1.353.148-1.22.64-2.246 1.65-2.99 3.094C1.44 5.756 1.01 7.57.935 9.608c0 1.16.268 6.202.803 5.83 1.22-.878 1.16-2.766 1.309-3.644.223-1.309.58-4.224 1.68-5.027-.297.655 0 1.235.803 1.026-.074.655.223 1.235.73 1.532L8.296 8.3a22.931 22.931 0 014.149-2.067c-.208-.759-.476-1.502-.952-2.142C10.29 2.47 8.892.848 6.735.7z" fill="#D33939"></path>
+                <path d="M15.926 2.692C14.692 1.532 13.16.655 11.494.298c-2.23-.52-4.357-.372-6.097.55A4.074 4.074 0 016.75.7c2.157.15 3.54 1.77 4.76 3.391.46.64.743 1.383.951 2.142a35.94 35.94 0 012.038-.7c.357-.148 2.915-.58 3.063-.877.194-.58-1.264-1.591-1.636-1.963z" fill="#AF3C3C"></path>
+                <path d="M15.674 5.98c-.194-.774-.491-1.696-1.22-2.187l-.015-.015c-2.603.268-5.205 1.353-7.094 2.99-1.457 1.234-2.692 2.617-1.814 4.446.312.714.743 1.145 1.234 1.383 1.1.536.729-.654 1.933-1.576 1.146-.878 3.02-1.606 4.09-2.201.357-.194 2.722-.848 3.079-1.012.09-1.115.044-.788-.193-1.829z" fill="#fff"></path>
+                <path d="M18.692 6.336c-.238-1.695-.951-2.543-2.766-2.618-.49-.014-.996.015-1.487.06l.015.015c.729.49 1.026 1.413 1.22 2.186.133.58.178 1.25.118 1.948 0 0 3.005-.892 2.9-1.591z" fill="#C0DFED"></path>
+                <path d="M6.587 3.555a7.282 7.282 0 01-.387.55l-.342.58-.625 1.19-.134-.178.432-.164.416-.208.402-.238.401-.253.788-.535.402-.268c.134-.09.283-.164.416-.253h.015a.142.142 0 01.179.045c.03.044.03.089 0 .119l-.09.178a.614.614 0 01-.104.164c-.044.044-.074.104-.119.148-.044.045-.074.105-.119.15-.163.178-.357.341-.535.505a8.347 8.347 0 00-.52.505c-.045.045-.075.09-.12.134-.044.045-.074.104-.104.149s-.06.104-.089.149c-.03.06-.044.104-.074.163l.044-.178c.03-.06.045-.12.075-.179.03-.06.06-.104.089-.163.03-.045.06-.104.104-.149.149-.193.312-.387.476-.565l.49-.535c.045-.045.075-.09.105-.134.03-.045.06-.09.104-.149.03-.045.06-.104.09-.149.029-.044.044-.104.059-.148L8.505 4c-.134.09-.268.164-.401.253l-.387.268c-.253.178-.52.371-.788.55l-.402.253-.431.238-.446.208c-.164.06-.313.104-.476.149-.06.015-.134-.015-.149-.075-.015-.03 0-.074.015-.104l.342-.58.357-.565.193-.283c.075-.089.134-.178.208-.267.15-.149.298-.327.447-.491zM6.706 6.693s.044-.06.104-.149c.03-.045.074-.104.134-.163.03-.03.044-.06.074-.105l.104-.104c.074-.074.149-.148.238-.223.09-.074.178-.149.283-.223.104-.074.193-.149.312-.223.104-.074.223-.149.327-.208.119-.06.223-.134.342-.194.104-.059.223-.118.327-.178.104-.06.209-.104.313-.164.104-.06.193-.104.282-.148.179-.09.327-.164.431-.209.105-.044.164-.074.164-.074s-.044.045-.134.12c-.089.073-.208.192-.372.297-.163.119-.342.252-.55.386-.104.06-.208.134-.312.208-.104.06-.223.134-.327.209-.104.074-.223.134-.328.193a1 1 0 00-.163.104.534.534 0 00-.149.104c-.104.06-.208.12-.297.179-.09.06-.179.119-.253.178-.075.06-.149.104-.223.149-.06.044-.12.09-.164.119a9.736 9.736 0 00-.163.119z" fill="#7A2C2C"></path>
+                <path d="M7.702 12.315s.015-.045.06-.12c.03-.074.089-.178.163-.312.075-.134.179-.282.313-.46a6.09 6.09 0 011.145-1.086 6.81 6.81 0 01.803-.521c.282-.164.58-.327.892-.476.313-.149.64-.283.967-.416a30.347 30.347 0 011.948-.67c.625-.193 1.22-.342 1.725-.476 1.012-.252 1.696-.43 1.696-.43s-.045.014-.12.044c-.073.03-.192.074-.326.134-.283.104-.7.252-1.19.416-.49.164-1.071.357-1.696.55-.312.104-.624.209-.951.328-.328.119-.64.237-.967.356-.327.134-.64.253-.952.402-.312.149-.61.283-.892.446-.283.149-.55.313-.803.476-.12.09-.238.164-.357.253-.06.045-.104.09-.164.119a1.04 1.04 0 01-.149.119 8.662 8.662 0 00-.52.476 2.495 2.495 0 00-.342.416 3.94 3.94 0 00-.208.298c-.045.089-.075.134-.075.134z" fill="#99BAC6"></path>
+                <path d="M3.463 14.694a1.842 1.842 0 00-.907-.43c1.279.98.595 3.732-1.353 3.97 1.1.476 2.26.045 2.751-1.1.357-.804.179-1.86-.49-2.44z" fill="#C0DFED"></path>
+                <path d="M2.556 14.263a2.733 2.733 0 00-.49-.045c-.655 0-1.324.268-1.696.789-.684.951-.387 2.572.624 3.123.075.03.134.074.209.104 1.948-.253 2.632-2.99 1.353-3.971z" fill="#fff"></path>
+            </symbol>
+        </svg>
+    </div>
+    <a href="/" class="flex-shrink-0 flex items-center  newyear"></a>
+
+
+</div>    <a class="logo-newyear" href="https://appmsr.com"></a>
+
+
+    </div>
+    <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="px-3 mt-6 relative inline-block text-left menu_dropdown">
+        <div x-description="Dropdown menu toggle, controlling the show/hide state of dropdown menu.">
+            <button @click="open = !open" type="button" class="group w-full rounded py-2 text-ns font-medium text-gray-700" id="options-menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                <span class="flex w-full justify-between items-center">
+                  <span class="flex min-w-0 items-center justify-between space-x-3">
+                   <span class="inline-block relative">  <img class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0 shadow" src="/images/user-default.png" alt="user">
+                       <!-- todo: включить иконки соц сетей -->
+                       <span class="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white bg-green-400"></span></span>
+                    <span class="flex-1 min-w-0">
+                      <span class="text-gray-900 dark:text-white text-ns font-medium truncate">bitit</span>
+                      <span class="text-gray-500 dark:text-gray-500 text-ns truncate">ID:0j7bmqpX</span>
+                    </span>
+                  </span>
+                  <svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: solid/selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+</svg>
+                </span>
+            </button>
+        </div>
+        <div x-show="open" x-description="Dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="z-10 mx-3 origin-top absolute right-0 left-0 mt-1 rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 bg-white               dark:bg-dark" role="menu" aria-orientation="vertical" aria-labelledby="options-menu" style="display: none;">
+            <div class=" ">
+                <a href="https://appmsr.com/dashboard/profile" class="block px-4  py-2 text-ns text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-dark-50" role="menuitem">Profile Settings</a>
+            </div>
+            <div class=" ">
+                <a href="https://appmsr.com/dashboard/support" class="block px-4 border-t border-b border-gray-200 dark:border-dark-200  py-2 text-ns text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-dark-50" role="menuitem">Support Center</a>
+            </div>
+            <div class=" ">
+                <a href="https://appmsr.com/logout" class="block px-4 py-2  text-ns text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-dark-50" role="menuitem">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 flex-grow flex flex-col">
+        <nav id="left-menu" class="flex-1 ">
+            <ul>
+                <li class=""><a href="https://appmsr.com/dashboard/home" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+                        Dashboard
+                    </a></li>
+                <li class="active_menu"><a href="https://appmsr.com/dashboard/account" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Available Accounts
+                        <span class="bg-gray-200 dark:bg-dark-100 dark:hover:bg-dark-50  ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full">
+                    5
+                </span>
+                    </a></li>
+                <div class="hline mt-1"></div>
+                <li class=""><a href="https://appmsr.com/dashboard/whatsapp" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        WhatsApp
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/viber" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Viber
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/messenger" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Messenger
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/telegram" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Telegram
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/snapchat" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Snapchat
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/wechat" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        WeChat
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/skype" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium ">
+
+                        Skype
+                    </a></li>
+                <div class="hline mt-1"></div>
+                  <li class=""><a href="https://appmsr.com/dashboard/location" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                             Current Location
+                         </a></li>
+                     <li class=""><a href="https://appmsr.com/dashboard/movement" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+                             Movement History
+                         </a></li>
+                <div class="hline mt-1"></div>
+                <li class=""><a href="https://appmsr.com/dashboard/balance" class="text-gray-600 truncate rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Wallet Balance
+                        <span class="bg-gray-200 dark:bg-dark-100  rounded  ml-auto inline-block py-0.5 px-2 text-xs font-medium rounded-full">
+               <span class="dollar"> $ </span> 0 USD
+                </span>
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/history" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Payment History
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/actions" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Sales and Promotions
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/affiliate" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Affiliate Program
+                    </a></li>
+                <div class="hline mt-1"></div>
+                <li class=""><a href="https://appmsr.com/dashboard/reviews" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+
+
+                        Reviews Section
+                    </a></li>
+                <li class=""><a href="https://appmsr.com/dashboard/faq" class="text-gray-600 rounded dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        FAQ Section
+                    </a></li>
+
+                <li class=""><a href="https://appmsr.com/dashboard/support" class="text-gray-600 roundeds dark:text-white  group flex items-center px-8 pt-3 pb-2-1 text-ns font-medium">
+
+                        Support Center
+                                            </a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+    </div>
+</div>
+            <div id="centerContentBody" x-init="$el.focus()" class="flex flex-col flex-1 overflow-hidden" tabindex="0">
+                <main class="flex-1 relative  mt-10" x-data="" x-init="$el.focus()">
+                    <!-- END Шапка 2 -->
+
+
+
+                    
+
+
+
+                    
+                        <div class="py-0 lg:pt-2">
+
+                    <div class="max-w-7xl mx-auto px-0 lg:px-2 md:px-4">
+                    
+                    <div class="py-0">
+                        <div class="bg-white overflow-hidden shadow lg:rounded-lg Step3 ">
+                            
+
+                            
+                            
+
+
+
+
+                            
+                                <div class="lg:px-6 px-4 pt-5 pb-2 pattern ">
+                                    <div class="pb-3">
+                                                                                                                                                                                                            <h3 class="text-lg leading-6 font-normal text-gray-900 dark:text-white">
+                                                Available Accounts
+                                            </h3>
+                                        
+
+                                        <nav class="flex mt-2" aria-label="Breadcrumb">
+                                            <ol class="flex items-center space-x-4">
+                                                <li>
+                                                    <div class="flex items-center">
+                                                                                                                    <a href="https://appmsr.com/dashboard/home" class="ml-0 text-ns font-minimal color-link hover:text-gray-700
+hover:text-blue-500">Dashboard</a>
+                                                                                                            </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex items-center">
+                                                        <svg class="flex-shrink-0 h-5 w-5 text-gray-300"
+                                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                             viewBox="0 0 20 20" aria-hidden="true">
+                                                            <path fill="#3498db"
+                                                                  d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z"/>
+                                                        </svg>
+                                                        <a href="https://appmsr.com/dashboard/balance"
+                                                           aria-current="page" class="ml-1 text-ns font-minimal color-link hover:text-gray-700
+hover:text-blue-500"> Wallet Replenishment
+
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </nav>
+
+
+                                                                                    <p class="mt-2  text-sm text-gray-500 dark:text-gray-500 font-normal"> Choose one or several accounts for activation</p>
+                                        
+
+                                        <p class="mt-2  text-sm text-gray-500 dark:text-gray-500 font-normal box-account-price"> Pricing of
+                                            <strong
+                                                class="text-gray-700 dark:text-gray-700 price-count"> 1 session activation </strong> after discount
+                                            <strong
+                                                class="text-gray-700 dark:text-gray-700 line-through price-discount"></strong>
+                                            <strong class="text-gray-700 dark:text-gray-700 price-current"> </strong>
+                                        </p>
+
+                                                                                    <p class="mt-2  text-sm text-gray-500 dark:text-gray-500 font-normal">Refill your wallet balance for displaying data or launch another sessions</p>
+                                        
+
+                                    </div>
+                                </div>
+
+                                                                    <div
+                                        class="bg-yellow-50 rounded-md dark:bg-dark-100 dark:border-yellow-100 p-3  border border-gray-100">
+                                        <div class="flex px-2">
+                                            <div class="flex-shrink-0">
+                                                <!-- Heroicon name: solid/exclamation -->
+                                                <svg class="h-5 w-5 text-yellow-700" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                          d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                                          clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-ns text-gray-600 dark:text-amber-700  font-normal">
+                                                                                                            <p>
+                                                            <strong>Attention!</strong> The maximum number of accounts has been reached.
+                                                            <br> If you want to change the list, delete one of the active sessions and start a new one.</p>
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+
+                                <div class="bg-white overflow-hidden  ">
+                                    <ul class="divide-y divide-gray-200 border-t border-b border-gray-200 dark:border-dark dark:divide-gray-dark"
+                                        data-click-checked="account">
+                                                                                                                                    <li class="" id="s-OEXZ4kbdVPowna5k0Gp51RMm8D9ANJYl">
+    <div class="block hover:bg-gray-50 dark:hover:bg-dark-50 bg-gray-50 dark:bg-dark-50">
+        <div class="flex items-center px-4 py-2 lg:px-2">
+
+            <div class="min-w-0 flex-1 flex items-center lg:ml-4">
+                                <div>
+                    <label class="flex items-center text-sm cursor-pointer ml-0 lg:ml-0  mr-2">
+                        <input  name="accounts[]" type="checkbox" value="OEXZ4kbdVPowna5k0Gp51RMm8D9ANJYl" class="focus:ring-indigo-500 h-4 w-4 text-gray-700 dark:text-gray-700 dark:bg-dark-100 cursor-pointer border-gray-300 " aria-describedby="plan-option-pricing-0 plan-option-limit-0">
+                    </label>
+                </div>
+                                <div class="flex-shrink-0 ml-0">
+                    <img class="h-10 w-10 rounded-full dark:bg-dark shadow" src="https://appmsr.com/fn/check/avatar?id=OEXZ4kbdVPowna5k0Gp51RMm8D9ANJYl" alt="">
+                </div>
+                <div class="min-w-0 flex-1 px-2">
+                    <div>
+
+                                                    <div class="flex  font-medium text-gray-700 dark:text-gray-700 text-sm items-center">
+                                                                    <img class="flags_emul ml-1" src="https://static.geo.wf/flags/png/in.png" width="16px" height="16px" alt="">  <span class="truncate">
+                                                                           India, Delhi (New Delhi)
+                                                                                                     </span>
+                            </div>
+                        
+                        <p class="  mt-2  flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <img src="/_img/providers/whatsapp.png" class="h-6 w-6 flex-shrink-0" alt="whatsapp">
+                            <span class="truncate text-sm ml-1">918463971737</span>
+                        </p>
+                                            </div>
+
+                </div>
+            </div>
+                            <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Messages</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">1238</time>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Calls</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">54</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Routes</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">10</time>
+                        </div>
+                    </div>
+
+                </div>
+                        <div class="mr-2">
+                <div>
+                    <p class="text-sm flex text-gray-900 dark:text-white">
+
+                        <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500"> </span>
+                        <time class="ml-1 text-gray-900 dark:text-white" datetime="25 November 2022">25 November 2022</time>
+                    </p>
+
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <span class="hidden md:block"> </span>
+                            <div id="" class="flex items-center ml-1"><span data-view-el="volumetric_total" id="respObjVolumetricTotal" class="link_text mr-1">820.8 MB</span><img src="/_img/lk/folder-icon.png" class="w-8 h-7" alt=""></div>
+                        </div>
+                    
+                </div>
+
+            </div>
+   </div>
+
+</div>
+</li>
+                                                                                                                                                                                <li class="" id="s-nYl0LPm1zOQ36j7PQOaZodxwD4g7R85X">
+    <div class="block hover:bg-gray-50 dark:hover:bg-dark-50 bg-gray-50 dark:bg-dark-50">
+        <div class="flex items-center px-4 py-2 lg:px-2">
+
+            <div class="min-w-0 flex-1 flex items-center lg:ml-4">
+                                <div>
+                    <label class="flex items-center text-sm cursor-pointer ml-0 lg:ml-0  mr-2">
+                        <input  name="accounts[]" type="checkbox" value="nYl0LPm1zOQ36j7PQOaZodxwD4g7R85X" class="focus:ring-indigo-500 h-4 w-4 text-gray-700 dark:text-gray-700 dark:bg-dark-100 cursor-pointer border-gray-300 " aria-describedby="plan-option-pricing-0 plan-option-limit-0">
+                    </label>
+                </div>
+                                <div class="flex-shrink-0 ml-0">
+                    <img class="h-10 w-10 rounded-full dark:bg-dark shadow" src="https://appmsr.com/fn/check/avatar?id=nYl0LPm1zOQ36j7PQOaZodxwD4g7R85X" alt="">
+                </div>
+                <div class="min-w-0 flex-1 px-2">
+                    <div>
+
+                                                    <div class="flex  font-medium text-gray-700 dark:text-gray-700 text-sm items-center">
+                                                                    <img class="flags_emul ml-1" src="https://static.geo.wf/flags/png/in.png" width="16px" height="16px" alt="">  <span class="truncate">
+                                                                           India, Delhi (New Delhi)
+                                                                                                     </span>
+                            </div>
+                        
+                        <p class="  mt-2  flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <img src="/_img/providers/whatsapp.png" class="h-6 w-6 flex-shrink-0" alt="whatsapp">
+                            <span class="truncate text-sm ml-1">919866265416</span>
+                        </p>
+                                            </div>
+
+                </div>
+            </div>
+                            <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Messages</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">996</time>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Calls</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">52</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Routes</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">19</time>
+                        </div>
+                    </div>
+
+                </div>
+                        <div class="mr-2">
+                <div>
+                    <p class="text-sm flex text-gray-900 dark:text-white">
+
+                        <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500"> </span>
+                        <time class="ml-1 text-gray-900 dark:text-white" datetime="25 November 2022">25 November 2022</time>
+                    </p>
+
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <span class="hidden md:block"> </span>
+                            <div id="" class="flex items-center ml-1"><span data-view-el="volumetric_total" id="respObjVolumetricTotal" class="link_text mr-1">3.06 GB</span><img src="/_img/lk/folder-icon.png" class="w-8 h-7" alt=""></div>
+                        </div>
+                    
+                </div>
+
+            </div>
+   </div>
+
+</div>
+</li>
+                                                                                                                                                                                <li class="" id="s-PWbJzyYgNl3GXaO39Ea8OA4759e0qdVD">
+    <div class="block hover:bg-gray-50 dark:hover:bg-dark-50 bg-gray-50 dark:bg-dark-50">
+        <div class="flex items-center px-4 py-2 lg:px-2">
+
+            <div class="min-w-0 flex-1 flex items-center lg:ml-4">
+                                <div>
+                    <label class="flex items-center text-sm cursor-pointer ml-0 lg:ml-0  mr-2">
+                        <input  name="accounts[]" type="checkbox" value="PWbJzyYgNl3GXaO39Ea8OA4759e0qdVD" class="focus:ring-indigo-500 h-4 w-4 text-gray-700 dark:text-gray-700 dark:bg-dark-100 cursor-pointer border-gray-300 " aria-describedby="plan-option-pricing-0 plan-option-limit-0">
+                    </label>
+                </div>
+                                <div class="flex-shrink-0 ml-0">
+                    <img class="h-10 w-10 rounded-full dark:bg-dark shadow" src="https://appmsr.com/fn/check/avatar?id=PWbJzyYgNl3GXaO39Ea8OA4759e0qdVD" alt="">
+                </div>
+                <div class="min-w-0 flex-1 px-2">
+                    <div>
+
+                                                    <div class="flex  font-medium text-gray-700 dark:text-gray-700 text-sm items-center">
+                                                                    <img class="flags_emul ml-1" src="https://static.geo.wf/flags/png/in.png" width="16px" height="16px" alt="">  <span class="truncate">
+                                                                           India, Delhi (New Delhi)
+                                                                                                     </span>
+                            </div>
+                        
+                        <p class="  mt-2  flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <img src="/_img/providers/whatsapp.png" class="h-6 w-6 flex-shrink-0" alt="whatsapp">
+                            <span class="truncate text-sm ml-1">918947105654</span>
+                        </p>
+                                            </div>
+
+                </div>
+            </div>
+                            <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Messages</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">1733</time>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Calls</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">116</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Routes</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">14</time>
+                        </div>
+                    </div>
+
+                </div>
+                        <div class="mr-2">
+                <div>
+                    <p class="text-sm flex text-gray-900 dark:text-white">
+
+                        <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500"> </span>
+                        <time class="ml-1 text-gray-900 dark:text-white" datetime="29 November 2022">29 November 2022</time>
+                    </p>
+
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <span class="hidden md:block"> </span>
+                            <div id="" class="flex items-center ml-1"><span data-view-el="volumetric_total" id="respObjVolumetricTotal" class="link_text mr-1">3.28 GB</span><img src="/_img/lk/folder-icon.png" class="w-8 h-7" alt=""></div>
+                        </div>
+                    
+                </div>
+
+            </div>
+   </div>
+
+</div>
+</li>
+                                                                                                                                                                                <li class="" id="s-9lGBgZ1Y5QW3Rr3EXojXKdV8kvebyPMO">
+    <div class="block hover:bg-gray-50 dark:hover:bg-dark-50 bg-gray-50 dark:bg-dark-50">
+        <div class="flex items-center px-4 py-2 lg:px-2">
+
+            <div class="min-w-0 flex-1 flex items-center lg:ml-4">
+                                <div>
+                    <label class="flex items-center text-sm cursor-pointer ml-0 lg:ml-0  mr-2">
+                        <input  name="accounts[]" type="checkbox" value="9lGBgZ1Y5QW3Rr3EXojXKdV8kvebyPMO" class="focus:ring-indigo-500 h-4 w-4 text-gray-700 dark:text-gray-700 dark:bg-dark-100 cursor-pointer border-gray-300 " aria-describedby="plan-option-pricing-0 plan-option-limit-0">
+                    </label>
+                </div>
+                                <div class="flex-shrink-0 ml-0">
+                    <img class="h-10 w-10 rounded-full dark:bg-dark shadow" src="https://appmsr.com/fn/check/avatar?id=9lGBgZ1Y5QW3Rr3EXojXKdV8kvebyPMO" alt="">
+                </div>
+                <div class="min-w-0 flex-1 px-2">
+                    <div>
+
+                                                    <div class="flex  font-medium text-gray-700 dark:text-gray-700 text-sm items-center">
+                                                                    <img class="flags_emul ml-1" src="https://static.geo.wf/flags/png/in.png" width="16px" height="16px" alt="">  <span class="truncate">
+                                                                           India, Delhi (New Delhi)
+                                                                                                     </span>
+                            </div>
+                        
+                        <p class="  mt-2  flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <img src="/_img/providers/whatsapp.png" class="h-6 w-6 flex-shrink-0" alt="whatsapp">
+                            <span class="truncate text-sm ml-1">918947105214</span>
+                        </p>
+                                            </div>
+
+                </div>
+            </div>
+                            <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Messages</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">1357</time>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Calls</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">127</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Routes</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">20</time>
+                        </div>
+                    </div>
+
+                </div>
+                        <div class="mr-2">
+                <div>
+                    <p class="text-sm flex text-gray-900 dark:text-white">
+
+                        <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500"> </span>
+                        <time class="ml-1 text-gray-900 dark:text-white" datetime="29 November 2022">29 November 2022</time>
+                    </p>
+
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <span class="hidden md:block"> </span>
+                            <div id="" class="flex items-center ml-1"><span data-view-el="volumetric_total" id="respObjVolumetricTotal" class="link_text mr-1">1.97 GB</span><img src="/_img/lk/folder-icon.png" class="w-8 h-7" alt=""></div>
+                        </div>
+                    
+                </div>
+
+            </div>
+   </div>
+
+</div>
+</li>
+                                                                                                                                                                                <li class="" id="s-nAqeQvlMXL5ZGpY13gpx9zO263YkBbgo">
+    <div class="block hover:bg-gray-50 dark:hover:bg-dark-50 bg-gray-50 dark:bg-dark-50">
+        <div class="flex items-center px-4 py-2 lg:px-2">
+
+            <div class="min-w-0 flex-1 flex items-center lg:ml-4">
+                                <div>
+                    <label class="flex items-center text-sm cursor-pointer ml-0 lg:ml-0  mr-2">
+                        <input  name="accounts[]" type="checkbox" value="nAqeQvlMXL5ZGpY13gpx9zO263YkBbgo" class="focus:ring-indigo-500 h-4 w-4 text-gray-700 dark:text-gray-700 dark:bg-dark-100 cursor-pointer border-gray-300 " aria-describedby="plan-option-pricing-0 plan-option-limit-0">
+                    </label>
+                </div>
+                                <div class="flex-shrink-0 ml-0">
+                    <img class="h-10 w-10 rounded-full dark:bg-dark shadow" src="https://appmsr.com/fn/check/avatar?id=nAqeQvlMXL5ZGpY13gpx9zO263YkBbgo" alt="">
+                </div>
+                <div class="min-w-0 flex-1 px-2">
+                    <div>
+
+                                                    <div class="flex  font-medium text-gray-700 dark:text-gray-700 text-sm items-center">
+                                                                    <img class="flags_emul ml-1" src="https://static.geo.wf/flags/png/in.png" width="16px" height="16px" alt="">  <span class="truncate">
+                                                                           India, Delhi (New Delhi)
+                                                                                                     </span>
+                            </div>
+                        
+                        <p class="  mt-2  flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <img src="/_img/providers/wechat_phone.png" class="h-6 w-6 flex-shrink-0" alt="wechat_phone">
+                            <span class="truncate text-sm ml-1">918742101470</span>
+                        </p>
+                                            </div>
+
+                </div>
+            </div>
+                            <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Messages</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">994</time>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Calls</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">292</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:block hidden">
+                    <div class="mr-4">
+                        <div class="text-sm flex text-gray-900 dark:text-white -mt-1">
+
+                            <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500">Routes</span>
+
+                        </div>
+                        <div class="text-sm mt-3 flex text-gray-900 dark:text-white">
+
+
+                            <time class="ml-1">58</time>
+                        </div>
+                    </div>
+
+                </div>
+                        <div class="mr-2">
+                <div>
+                    <p class="text-sm flex text-gray-900 dark:text-white">
+
+                        <span class="hidden md:block text-sm text-gray-500 dark:text-gray-500"> </span>
+                        <time class="ml-1 text-gray-900 dark:text-white" datetime="29 November 2022">29 November 2022</time>
+                    </p>
+
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-500">
+                            <span class="hidden md:block"> </span>
+                            <div id="" class="flex items-center ml-1"><span data-view-el="volumetric_total" id="respObjVolumetricTotal" class="link_text mr-1">2 GB</span><img src="/_img/lk/folder-icon.png" class="w-8 h-7" alt=""></div>
+                        </div>
+                    
+                </div>
+
+            </div>
+   </div>
+
+</div>
+</li>
+                                                                                                                        </ul>
+                                    <div class="flex justify-center lg:px-6 px-4 py-3 lg:pt-4 lg:pb-2">
+                                        <div class="flex-1 flex  ">
+
+                                            <p class="lg:block hidden lg:mt-2  text-sm text-gray-500 dark:text-gray-500 font-normal"> 
+                                                <span id="addsum-to-balance" class="hidden">Additional payment is required to activate: <strong
+                                                        class="text-gray-700 dark:text-gray-700"></strong></span>
+                                            </p>
+
+
+                                        </div>
+
+                                        <div class="lg:mt-0 mt-2">
+                                            <div class="mt-1 flex items-center text-sm text-gray-500">
+                                                <button id="createOrder" onclick="createOrder()" type="button"
+                                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-green-700 common-Button--default shadow-lg hover:bg-green-200 focus:outline-none translation">
+                                                    Continue
+                                                </button>
+                                                <button id="deleteChecks" onclick="deleteChecks()" type="button"
+                                                        class="ml-2 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-blue-550 bg-white hover:bg-gray-50 dark:hover:bg-dark-100 shadow-lg">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+        </div>
+
+        
+        <div id="account_faq" class="py-0 lg:py-2">
+            <div class="max-w-7xl mx-auto px-0  lg:px-2 md:px-4">
+                <div class="py-0 relative">
+                    <div class="bg-white overflow-hidden shadow lg:rounded-lg">
+                        <div class="px-4 py-5 lg:p-6 pattern">
+                            <div class="relative z-10">
+                                <h3 class="text-lg leading-6 font-normal text-gray-900 dark:text-white">
+                                    Frequently Asked Questions
+                                </h3>
+                                <p class="mt-2 max-w-2xl text-sm text-gray-500 dark:text-gray-500">
+                                    Common questions from our users
+                                </p>
+                                <ol class="faq-list js-faqBlock text-sm js-gaFaq" data-gagroup="FAQ-mobile">
+        <li class="faq-list__i js-item" id="Q8"><h3 class="faq-list__i__title js-title text-gray-700 dark:text-gray-700"> How to change <span class="font-medium">an incorrectly entered phone number or
+</span> email?
+            </h3>
+            <div style="display: none;" class="faq-list__i__text js-text">
+
+                <p  class="mt-2 text-sm text-gray-700 dark:text-gray-700 font-minimal">Simply delete the monitoring session with the wrong data and run the software again. </p>
+
+            </div>
+        </li>
+        <li class="faq-list__i js-item" id="Q9"><h3 class="faq-list__i__title js-title text-gray-700 dark:text-gray-700"> How many accounts can I monitor at once?
+            </h3>
+            <div style="display: none;" class="faq-list__i__text js-text">
+
+                <p  class="mt-2 text-sm text-gray-700 dark:text-gray-700 font-minimal">The software can monitor up to five different accounts in a single profile at the same time. </p>
+
+            </div>
+        </li>
+        <li class="faq-list__i js-item" id="Q10"><h3 class="faq-list__i__title js-title text-gray-700 dark:text-gray-700"> What if the account limit is reached?</h3>
+            <div style="display: none;" class="faq-list__i__text js-text">
+
+                <p  class="mt-2 text-sm text-gray-700 dark:text-gray-700 font-minimal">If you want to track more than five accounts, you must sign up for an additional account in the Dashboard.</p>
+
+            </div>
+        </li>
+        <li class="faq-list__i js-item" id="Q11"><h3 class="faq-list__i__title js-title text-gray-700 dark:text-gray-700"> During the registration process the phone number/username/email were provided incorrectly, how can I change it?</h3>
+            <div style="display: none;" class="faq-list__i__text js-text">
+
+                <p  class="mt-2 text-sm text-gray-700 dark:text-gray-700 font-minimal">To change your account information, you need to go to the Dashboard Settings.</p>
+
+            </div>
+        </li>
+        <li class="faq-list__i js-item" id="Q12"><h3 class="faq-list__i__title js-title text-gray-700 dark:text-gray-700"> The Accounts section shows one or more accounts available, what to do next?</h3>
+            <div style="display: none;" class="faq-list__i__text js-text">
+
+                <p  class="mt-2 text-sm text-gray-700 dark:text-gray-700 font-minimal">After successfully launching one or more monitoring sessions, you need to replenish the balance by one of the supported methods and access the intercepted archive with the history of the account.</p>
+
+            </div>
+        </li>
+        <li class="faq-list__i js-item" id="Q14"><h3 class="faq-list__i__title js-title text-gray-700 dark:text-gray-700"> User&#039;s photo is not displayed or is not displayed correctly, what does it mean?</h3>
+            <div style="display: none;" class="faq-list__i__text js-text">
+
+                <p  class="mt-2 text-sm text-gray-700 dark:text-gray-700 font-minimal">No photo of the user may mean that his account does not have the specified image or that his image is not saved in the account history.</p>
+
+            </div>
+        </li>
+    </ol>
+
+
+
+                            </div>
+                        </div>                            <div class="newyear_page_right"></div>
+                            <div class="newyear_page_left"></div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+                    <footer class="p-4">
+    <p class="mt-2 max-w-4xl text-sm text-center text-gray-500 font-minimal">The software is fully compatible with devices on platforms </p>
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-4 gap-8 md:grid-cols-4 lg:grid-cols-4">
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                <img class="h-8" src="/_img/svg/apple.svg" alt="apple">
+            </div>
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                <img class="h-8" src="/_img/svg/android.svg" alt="android">
+            </div>
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                <img class="h-8" src="/_img/svg/happy-mac-logo.svg" alt="mac">
+            </div>
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                <img class="h-8" src="/_img/svg/Windows_logo_-_2012.svg" alt="Transistor">
+            </div>
+
+        </div>
+    </div>
+    <p class="mt-2 max-w-4xl text-sm text-center text-gray-500 font-minimal"> <strong>© 2023   Copyright.</strong>  All trademarks are the property of their respective owners   </p>
+
+
+</footer>
+
+                </main>
+            </div>
+              </div>
+
+        <div class="mobile-app lg:hidden"><div class="mobile-app-icon-bar mx-auto px-2 dark:border-dark-400 max-w-5x7
+grid grid-cols-4 gap-2 border-t border-gray-100 ">
+        <a href="https://appmsr.com/dashboard/home" class=" relative text-gray-400 dark:text-gray-500 text-xs text-center  flex flex-col">
+           <div>  <svg class="h-6 flex-shrink-0 mx-auto" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="CurrentColor" fill-rule="evenodd" d="M11.03 2.59a1.5 1.5 0 011.94 0l7.5 6.363a1.5 1.5 0 01.53 1.144V19.5a1.5 1.5 0 01-1.5 1.5h-5.75a.75.75 0 01-.75-.75V14h-2v6.25a.75.75 0 01-.75.75H4.5A1.5 1.5 0 013 19.5v-9.403c0-.44.194-.859.53-1.144l7.5-6.363zM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v6.25h5v-9.403L12 3.734z"/></svg>
+               Home</div></a>
+        <a href="https://appmsr.com/dashboard/account" class="active_menu_v1 relative text-gray-400 dark:text-gray-500 text-xs text-center  flex flex-col">
+                            <div>
+                    <svg class="h-6 flex-shrink-0 mx-auto" viewBox="0 -2.93 32.537 32.537" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-481.391 -197.473)"><path fill="CurrentColor" d="M512.928,224.152a.991.991,0,0,1-.676-.264,21.817,21.817,0,0,0-29.2-.349,1,1,0,1,1-1.322-1.5,23.814,23.814,0,0,1,31.875.377,1,1,0,0,1-.677,1.736Z"/><path fill="CurrentColor" d="M498.191,199.473a7.949,7.949,0,1,1-7.949,7.95,7.959,7.959,0,0,1,7.949-7.95m0-2a9.949,9.949,0,1,0,9.95,9.95,9.949,9.949,0,0,0-9.95-9.95Z"/></g></svg>
+                    Accounts
+                </div>
+            
+
+                            <span class="right-2 absolute uppercase font-normal inline-flex text-center p-205 leading-none text-xs h-3 w-3 inline-flex items-center justify-center rounded-full bg-gray-200 dark:bg-dark-100 text-gray-600 dark:text-white"> 5</span></a>
+        <a href="https://appmsr.com/dashboard/balance" class=" relative text-gray-400 dark:text-gray-500 text-xs text-center  flex flex-col"><div>
+            <svg class="h-6 flex-shrink-0 mx-auto" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 487.6 487.6" style="enable-background:new 0 0 487.6 487.6;" xml:space="preserve">
+<g>
+    <path fill="CurrentColor" d="M460.3,216.55h-11.6v-69.7c0-28.5-23.2-51.6-51.6-51.6h-10.7l0.1-25.9c0-19.2-15.6-34.8-34.8-34.8H42.3
+		c-23.1,0-42,18.6-42.3,41.7c0,0.2,0,0.4,0,0.6v341.4c0,19.2,15.6,34.8,34.8,34.8h362.4c28.5,0,51.6-23.2,51.6-51.6v-69.8h11.6
+		c15,0,27.2-12.2,27.2-27.2v-60.7C487.5,228.75,475.3,216.55,460.3,216.55z M42.3,58.55h309.4c5.9,0,10.8,4.8,10.8,10.7l-0.1,26
+		H42.3c-10.1,0-18.3-8.2-18.3-18.3S32.2,58.55,42.3,58.55z M424.7,401.35c0,15.2-12.4,27.6-27.6,27.6H34.7
+		c-5.9,0-10.8-4.8-10.8-10.8v-303.1c5.6,2.7,11.8,4.2,18.4,4.2h354.8c15.2,0,27.6,12.4,27.6,27.6v69.7h-81.9
+		c-15,0-27.2,12.2-27.2,27.2v60.7c0,15,12.2,27.2,27.2,27.2h81.9V401.35z M463.5,304.45c0,1.8-1.4,3.2-3.2,3.2H342.9
+		c-1.8,0-3.2-1.4-3.2-3.2v-60.7c0-1.7,1.4-3.2,3.2-3.2h117.4c1.7,0,3.2,1.4,3.2,3.2L463.5,304.45L463.5,304.45z"/>
+</g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+</svg>
+                Wallet</div></a>
+        <a href="https://appmsr.com/dashboard/affiliate" class=" relative text-gray-400 dark:text-gray-500 text-xs text-center  flex flex-coll">
+            <div> <svg class="h-6 flex-shrink-0 mx-auto" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h28v28H0z"></path><path d="M9.12 15c1.06 0 1.62.1 2.2.42.54.29.97.72 1.26 1.26.31.58.42 1.14.42 2.2v2.24c0 1.06-.1 1.62-.42 2.2-.29.54-.72.97-1.26 1.26-.58.31-1.14.42-2.2.42H6.88c-1.06 0-1.62-.1-2.2-.42a3.05 3.05 0 01-1.26-1.26 4.24 4.24 0 01-.42-2.2v-2.24c0-1.06.1-1.62.42-2.2.29-.54.72-.97 1.26-1.26a4.24 4.24 0 012.2-.42h2.24zm12 0c1.06 0 1.62.1 2.2.42.54.29.97.72 1.26 1.26.31.58.42 1.14.42 2.2v2.24c0 1.06-.1 1.62-.42 2.2-.29.54-.72.97-1.26 1.26-.58.31-1.14.42-2.2.42h-2.24c-1.06 0-1.62-.1-2.2-.42a3.05 3.05 0 01-1.26-1.26 4.24 4.24 0 01-.42-2.2v-2.24c0-1.06.1-1.62.42-2.2.29-.54.72-.97 1.26-1.26a4.24 4.24 0 012.2-.42h2.24zm-12 2H6.88c-.76 0-1 .05-1.26.18a1.04 1.04 0 00-.44.44c-.13.25-.18.5-.18 1.26v2.24c0 .76.05 1 .18 1.26.1.19.25.33.44.44.26.13.5.18 1.26.18h2.24c.76 0 1-.05 1.26-.18.19-.1.33-.25.44-.44.13-.25.18-.5.18-1.26v-2.24c0-.76-.05-1-.18-1.26a1.04 1.04 0 00-.44-.44c-.26-.13-.5-.18-1.26-.18zm12 0h-2.24c-.76 0-1 .05-1.26.18a1.04 1.04 0 00-.44.44c-.13.25-.18.5-.18 1.26v2.24c0 .76.05 1 .18 1.26.1.19.25.33.44.44.25.13.5.18 1.26.18h2.24c.76 0 1-.05 1.26-.18.19-.1.33-.25.44-.44.13-.25.18-.5.18-1.26v-2.24c0-.76-.05-1-.18-1.26a1.04 1.04 0 00-.44-.44c-.25-.13-.5-.18-1.26-.18zm-.23-14.59c.63.2 1.1.51 1.86 1.27l1.57 1.57a4.23 4.23 0 011.27 1.86 3.04 3.04 0 010 1.78c-.2.63-.51 1.1-1.27 1.86l-1.57 1.57a4.23 4.23 0 01-1.86 1.27 3.04 3.04 0 01-1.78 0 4.23 4.23 0 01-1.86-1.27l-1.58-1.57a4.23 4.23 0 01-1.26-1.86 3.04 3.04 0 010-1.78c.2-.63.51-1.1 1.26-1.86l1.58-1.57a4.23 4.23 0 011.86-1.27 3.04 3.04 0 011.78 0zM9.12 3c1.06 0 1.62.1 2.2.42.54.29.97.72 1.26 1.26.31.58.42 1.14.42 2.2v2.24c0 1.06-.1 1.62-.42 2.2-.29.54-.72.97-1.26 1.26-.58.31-1.14.42-2.2.42H6.88c-1.06 0-1.62-.1-2.2-.42a3.05 3.05 0 01-1.26-1.26A4.24 4.24 0 013 9.12V6.88c0-1.06.1-1.62.42-2.2.29-.54.72-.97 1.26-1.26A4.24 4.24 0 016.88 3h2.24zm10.57 1.33c-.28.08-.48.22-1.02.76l-1.58 1.58c-.54.54-.68.75-.76 1.02a1.04 1.04 0 000 .62c.08.27.22.48.76 1.02l1.58 1.58c.54.54.74.68 1.02.76.2.07.41.07.62 0 .28-.08.48-.22 1.02-.76l1.58-1.58c.54-.54.68-.74.76-1.02a1.04 1.04 0 000-.62c-.08-.27-.22-.48-.76-1.02l-1.58-1.58c-.54-.54-.74-.68-1.02-.76a1.04 1.04 0 00-.62 0zM9.12 5H6.88c-.76 0-1 .05-1.26.18a1.04 1.04 0 00-.44.44c-.13.26-.18.5-.18 1.26v2.24c0 .76.05 1 .18 1.26.1.2.25.34.44.44.26.13.5.18 1.26.18h2.24c.76 0 1-.05 1.26-.18.19-.1.33-.25.44-.44.13-.25.18-.5.18-1.26V6.88c0-.76-.05-1-.18-1.26a1.04 1.04 0 00-.44-.44C10.12 5.05 9.88 5 9.1 5z" fill="CurrentColor" fill-rule="nonzero"></path></g></svg>Affiliate</div></a>
+    </div>   </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="fixed inset-0 px-4 pt-10 sm:pt-2 pointer-events-none z-30">
+    <div class="fixed inset-0 px-4 pt-10 sm:pt-2 pointer-events-none z-30">
+<div class="flex items-end justify-center px-4 py-2 sm:pt-1  pointer-events-none  sm:items-start sm:justify-end">
+    <div x-show="showPayment" x-description="Notification panel, show/hide based on alert state." x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden" style="display: none">
+        <div class="bg-green-50"><div class="p-4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check-circle -->
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 text-green-400"><circle cx="12" cy="12" r="10" fill="#13B57D" opacity="0.18"></circle><path fill="#13B57D" d="M10 14.59l6.3-6.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l2.3 2.3z"></path></svg>
+                    </div>
+                    <div class="ml-3 w-0 flex-1 pt-0.5">
+                        <p class="text-sm font-medium text-gray-900">
+                        Your payment was replenished! <!-- Ваш платеж зачислен! -->
+                        </p>
+                        <p class="mt-1 text-ns text-gray-900">
+                            Payment amount <strong>######</strong>
+                            <!-- todo: автосмена валюты  --> USD replenished.
+                            <!-- Платеж на сумму <strong>900</strong> руб. зачислен.  -->
+                        </p>
+                    </div>
+                    <div class="ml-4 flex-shrink-0 flex">
+                        <button @click="show = false; setTimeout(() => show = true, 1000)" class="rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <span class="sr-only">Close</span>
+                            <!-- Heroicon name: solid/x -->
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div></div>
+    </div>
+</div>
+
+
+ <div class="hidden flex items-end justify-center px-4 py-2 sm:pt-1 pointer-events-none sm:items-start sm:justify-end">
+    <div x-data="{ show: true }" x-show="show" x-description="Notification panel, show/hide based on alert state." x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+        <div class="bg-red-50"><div class="p-4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check-circle -->
+                        <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#e25950" opacity="0.18" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"></path><path fill="#e25950" d="M12 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm1-5.9c-.13 1.2-1.88 1.2-2 0l-.5-5a1 1 0 0 1 1-1.1h1a1 1 0 0 1 1 1.1l-.5 5z"></path></svg>
+                    </div>
+                    <div class="ml-3 w-0 flex-1 pt-0.5">
+                        <p class="text-sm font-medium text-gray-900">
+                        Not credited! <!-- Не зачислено!  -->
+                        </p>
+                        <p class="mt-1 text-ns text-gray-900">
+                        Payment is not credited, please check if the data you entered is correct and try again.
+                            <!-- Платеж не зачислен, проверьте правильность указанных данных и попробуйте снова.  -->
+                        </p>
+                    </div>
+                    <div class="ml-4 flex-shrink-0 flex">
+                        <button @click="show = false; setTimeout(() => show = true, 1000)" class="rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <span class="sr-only">Close</span>
+                            <!-- Heroicon name: solid/x -->
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="hidden flex items-end justify-center px-4 py-2 sm:pt-1  pointer-events-none  sm:items-start sm:justify-end">
+    <div x-data="{ show: true }" x-show="show" x-description="Notification panel, show/hide based on alert state." x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+        <div class="p-4">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <!-- Heroicon name: outline/check-circle -->
+                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </div>
+                <div class="ml-3 w-0 flex-1 pt-0.5">
+                    <p class="text-sm font-medium text-gray-900">
+                    Waiting for crediting! <!-- Ожидание зачисления!  -->
+                    </p>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Payment amount <strong>######</strong> USD processing.
+                        <!--   -->
+                    </p>
+                </div>
+                <div class="ml-4 flex-shrink-0 flex">
+                    <button @click="show = false; setTimeout(() => show = true, 1000)" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <span class="sr-only">Close</span>
+                        <!-- Heroicon name: solid/x -->
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</div>
+</div>
+
+
+
+
+<script type="text/javascript" src="https://appmsr.com/js/dashboard/alpine.js"></script>
+<script type="text/javascript" src="https://appmsr.com/_js/index/formstyler.js"></script>
+<script>
+    let defaultScheme = 'light'; 
+    let autoScheme = 0; 
+    let timerScheme = 0; 
+    let timerStart = 20; 
+    let timerStop = 6;  
+    let schemeName = [{ 'light' : 'DayNight Theme', 'dark' : 'DayNight Theme' }];
+</script>
+ 
+<script type="text/javascript" src="https://appmsr.com/_js/intro/intro.min.js"></script>
+<script defer src="https://appmsr.com/vendor/base.js"></script>
+<script type="text/javascript" src="https://appmsr.com/_js/index/npg.js"></script>
+
+
+<script type="text/javascript" src="https://appmsr.com/_js/index/maskphone.js"></script>
+<script type="text/javascript" src="https://appmsr.com/_js/index/jquery.maskedinput.min.js"></script>
+<script defer src="https://appmsr.com/_js/index/sweetalert.min.js"></script>
+<script defer src="https://appmsr.com/_js/index/select2.js"></script>
+<script>
+    $(".js-faqBlock").on("click", ".js-title", function() {
+        $(this).parent().toggleClass("");
+        $(this).next().slideToggle(300)
+    });
+    $(".js-faqBlock").on("click", "a", function() {
+        var a = $(this).attr("href"),
+            b = /#Q[0-9]*/;
+        b.test(a) && (a = $(b.exec(a)[0]), a.toggleClass("on"), a.find(".js-title").next().slideToggle(300), $("body").animate({
+            scrollTop: a.position().top - 2 * $(".js-sticToolbar").height()
+        }, 500))
+    });
+
+</script>
+<script type="text/javascript" src="https://appmsr.com/js/index/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="https://appmsr.com/_js/Calendar/en/Calendar.js"></script>
+<script>
+        var ss = new Calendar({
+            element: $('.daterange--single'),
+            current_date: '2023',
+            format: {input: 'M/D/YYYY'},
+            required: false,
+            days_array: ['MON','TUE','WED','THU','FRI','SAT','SUN']
+        });
+
+        var dd = new Calendar({
+            element: $('.daterange--double'),
+            earliest_date: '2022-02-17',
+            latest_date: new Date(),
+            start_date: '2023-02-10',
+            end_date: '2023-02-17',
+            callback: function() {
+                var start = moment(this.start_date).locale('en').format('ll'),
+                    end = moment(this.end_date).locale('en').format('ll');
+
+                console.debug('Start Date: '+ start +'\nEnd Date: '+ end);
+            },
+            days_array: ['MON','TUE','WED','THU','FRI','SAT','SUN']
+        });
+    </script>
+            <script>
+                let balance = Number(0);
+                let get , = 0;
+                let pay , =activeAll;
+
+                function getPrice(value) {
+
+                    var priceRange = ["1","3","5"];
+                    var priceValue = ["120.00","80.00","60.00"];
+
+                    for (range in priceRange)
+                        if (value >= priceRange[range])
+                            chartValue = parseFloat(priceValue[range]);
+
+                    return chartValue;
+                }
+
+                function getOldPrice(value) {
+
+                    var priceRange = ["1","3","5"];
+                    var priceValue = ["130.00","85.00","65.00"];
+
+                    for (range in priceRange)
+                        if (value >= priceRange[range])
+                            chartValue = parseFloat(priceValue[range]);
+
+                    return chartValue;
+                }
+
+                function activeAccounts() {
+                    return $('input[name="accounts[]"]:checked').length;
+                }
+
+                function checkStatus(id) {
+                    if ($("input[name=\"accounts[]\"][value=" + id + "]").is(':checked')) {
+                        $("li[id=s-" + id + "] > div").addClass('bg-gray-50 dark:bg-dark-50 pointer-events-none -inset-px rounded-lg border-2 border-indigo-500 rounded-sm');
+                    } else {
+                        $("li[id=s-" + id + "] > div").removeClass('bg-gray-50 dark:bg-dark-50 pointer-events-none -inset-px rounded-lg border-2 border-indigo-500 rounded-sm');
+                    }
+                }
+
+                $('input[name="accounts[]"]').change(function () {
+                    $(this).click();
+                    handlerClick();
+                    checkStatus($(this).val());
+                });
+
+                $("ul[data-click-checked=account] li").click(function () {
+                    
+                        check = $(this).find("input[type=checkbox]");
+                    if (!check.is(':disabled')) {
+                        if (check.is(':checked')) {
+                            check.prop({"checked": false});
+                        } else {
+                            check.prop({"checked": true});
+                        }
+                    }
+                    checkStatus(check.val());
+                    handlerClick();
+                });
+
+                function activeAll() {
+                    $('input[name="accounts[]"]').prop({"checked": true});
+                    handlerClick();
+                }
+
+                function activeChecked() {
+                    var data = [];
+                    $('input[name="accounts[]"]').each(function () {
+                        if ($(this).is(":checked")) {
+                            data.push($(this).val());
+                        }
+                    });
+                    return data;
+                }
+
+                function createOrder() {
+                    if (balance >= getAmount) {
+                        location.href = 'https://appmsr.com/dashboard/create-order?account=' + activeChecked();
+                    } else {
+                        location.href = 'https://appmsr.com/dashboard/balance?amount=' + payAmount;
+                    }
+                }
+
+                function deleteChecks() {
+                    let checks = activeChecked();
+
+                    $.post("https://appmsr.com/emulator/checks-remove", { "checks" : checks }, function(data){
+                        if(data.status == 'success') {
+                            for (let idCheck of checks) {
+                                $("ul li[id=s-" + idCheck + "]").remove();
+                            }
+                            handlerClick();
+                        }
+                    });
+
+                }
+
+                function declOfNumAccount(n, text_forms) {
+
+                    n = Math.abs(n) % 100;
+                    let n1 = n % 10;
+                    if (n > 10 && n < 20) {
+                        return text_forms[2];
+                    }
+                    if (n1 > 1 && n1 < 5) {
+                        return text_forms[1];
+                    }
+                    if (n1 == 1) {
+                        return text_forms[0];
+                    }
+                    return text_forms[2];
+
+                }
+
+                function handlerClick() {
+                    let active = activeAccounts();
+                    if (active != 0) {
+                        let countSessionText = active + ' ' + declOfNumAccount(active, ['sessions', 'sessions', 'sessions']);
+                        let total = getPrice(active) * active;
+                        getAmount = total;
+                        let userBalance = 0;
+                        $(".price-count").html(countSessionText);
+                        $(".price-current").html(total + ' USD');
+                        $(".price-discount").html(getOldPrice(active) * active + ' USD');
+                        $(".box-account-price").show();
+
+                        if (userBalance >= total) {
+
+                            $("#createOrder").html('Deposit');
+                            $("#addsum-to-balance").addClass('hidden');
+                        } else {
+
+                            addAmount = total - userBalance;
+                            payAmount = Math.ceil(addAmount);
+
+                            $("#createOrder").html('Deposit ' + payAmount + ' USD');
+                            $("#addsum-to-balance").removeClass('hidden');
+                            $("#addsum-to-balance strong").html(payAmount + ' USD');
+                        }
+
+                    } else {
+                        $("#addsum-to-balance").addClass('hidden');
+                        $("#createOrder").html('Continue to');
+                        $(".box-account-price").hide();
+                    }
+                }
+
+                $(".box-account-price").hide();
+
+                $("#createOrder").html('Replenish');
+                activeAll();
+            </script>
+<script>
+    $('body').show();
+    $('.version').text(NProgress.version);
+    NProgress.start();
+    setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+
+    $("#b-0").click(function() { NProgress.start(); });
+    $("#b-40").click(function() { NProgress.set(0.4); });
+    $("#b-inc").click(function() { NProgress.inc(); });
+    $("#b-100").click(function() { NProgress.done(); });
+</script>
+
+
+
+            <script>
+                let balance = Number(0);
+                let getAmount = 0;
+                let payAmount;
+
+                function getPrice(value) {
+
+                    var priceRange = ["1","3","5"];
+                    var priceValue = ["120.00","80.00","60.00"];
+
+                    for (range in priceRange)
+                        if (value >= priceRange[range])
+                            chartValue = parseFloat(priceValue[range]);
+
+                    return chartValue;
+                }
+
+                function getOldPrice(value) {
+
+                    var priceRange = ["1","3","5"];
+                    var priceValue = ["130.00","85.00","65.00"];
+
+                    for (range in priceRange)
+                        if (value >= priceRange[range])
+                            chartValue = parseFloat(priceValue[range]);
+
+                    return chartValue;
+                }
+
+                function activeAccounts() {
+                    return $('input[name="accounts[]"]:checked').length;
+                }
+
+                function checkStatus(id) {
+                    if ($("input[name=\"accounts[]\"][value=" + id + "]").is(':checked')) {
+                        $("li[id=s-" + id + "] > div").addClass('bg-gray-50 dark:bg-dark-50 pointer-events-none -inset-px rounded-lg border-2 border-indigo-500 rounded-sm');
+                    } else {
+                        $("li[id=s-" + id + "] > div").removeClass('bg-gray-50 dark:bg-dark-50 pointer-events-none -inset-px rounded-lg border-2 border-indigo-500 rounded-sm');
+                    }
+                }
+
+                $('input[name="accounts[]"]').change(function () {
+                    $(this).click();
+                    handlerClick();
+                    checkStatus($(this).val());
+                });
+
+                $("ul[data-click-checked=account] li").click(function () {
+                    
+                        check = $(this).find("input[type=checkbox]");
+                    if (!check.is(':disabled')) {
+                        if (check.is(':checked')) {
+                            check.prop({"checked": false});
+                        } else {
+                            check.prop({"checked": true});
+                        }
+                    }
+                    checkStatus(check.val());
+                    handlerClick();
+                });
+
+                function activeAll() {
+                    $('input[name="accounts[]"]').prop({"checked": true});
+                    handlerClick();
+                }
+
+                function activeChecked() {
+                    var data = [];
+                    $('input[name="accounts[]"]').each(function () {
+                        if ($(this).is(":checked")) {
+                            data.push($(this).val());
+                        }
+                    });
+                    return data;
+                }
+
+                function createOrder() {
+                    if (balance >= getAmount) {
+                        location.href = 'https://appmsr.com/dashboard/create-order?account=' + activeChecked();
+                    } else {
+                        location.href = 'https://appmsr.com/dashboard/balance?amount=' + payAmount;
+                    }
+                }
+
+                function deleteChecks() {
+                    let checks = activeChecked();
+
+                    $.post("https://appmsr.com/emulator/checks-remove", { "checks" : checks }, function(data){
+                        if(data.status == 'success') {
+                            for (let idCheck of checks) {
+                                $("ul li[id=s-" + idCheck + "]").remove();
+                            }
+                            handlerClick();
+                        }
+                    });
+
+                }
+
+                function declOfNumAccount(n, text_forms) {
+
+                    n = Math.abs(n) % 100;
+                    let n1 = n % 10;
+                    if (n > 10 && n < 20) {
+                        return text_forms[2];
+                    }
+                    if (n1 > 1 && n1 < 5) {
+                        return text_forms[1];
+                    }
+                    if (n1 == 1) {
+                        return text_forms[0];
+                    }
+                    return text_forms[2];
+
+                }
+
+                function handlerClick() {
+                    let active = activeAccounts();
+                    if (active != 0) {
+                        let countSessionText = active + ' ' + declOfNumAccount(active, ['sessions', 'sessions', 'sessions']);
+                        let total = getPrice(active) * active;
+                        getAmount = total;
+                        let userBalance = 0;
+                        $(".price-count").html(countSessionText);
+                        $(".price-current").html(total + ' USD');
+                        $(".price-discount").html(getOldPrice(active) * active + ' USD');
+                        $(".box-account-price").show();
+
+                        if (userBalance >= total) {
+
+                            $("#createOrder").html('Deposit');
+                            $("#addsum-to-balance").addClass('hidden');
+                        } else {
+
+                            addAmount = total - userBalance;
+                            payAmount = Math.ceil(addAmount);
+
+                            $("#createOrder").html('Deposit ' + payAmount + ' USD');
+                            $("#addsum-to-balance").removeClass('hidden');
+                            $("#addsum-to-balance strong").html(payAmount + ' USD');
+                        }
+
+                    } else {
+                        $("#addsum-to-balance").addClass('hidden');
+                        $("#createOrder").html('Continue to');
+                        $(".box-account-price").hide();
+                    }
+                }
+
+                $(".box-account-price").hide();
+
+                $("#createOrder").html('Replenish');
+                activeAll();
+            </script>
+</body>
+</html>
